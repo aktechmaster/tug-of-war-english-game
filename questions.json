@@ -60,6 +60,102 @@
         "answer": 1
     },
     {
+        "category": "Animals 🐕",
+        "emoji": "🐕",
+        "question": "Which friendly animal is known as 'man's best friend'?",
+        "options": [
+            "Dog",
+            "Snake",
+            "Wolf",
+            "Tiger"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Animals 🐱",
+        "emoji": "🐱",
+        "question": "Which pet animal says 'Meow' and likes catching mice?",
+        "options": [
+            "Cat",
+            "Duck",
+            "Pig",
+            "Goat"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Animals 🐍",
+        "emoji": "🐍",
+        "question": "Which reptile has no legs and slithers on the ground?",
+        "options": [
+            "Lizard",
+            "Snake",
+            "Turtle",
+            "Frog"
+        ],
+        "answer": 1
+    },
+    {
+        "category": "Animals 🐝",
+        "emoji": "🐝",
+        "question": "Which insect makes honey and lives in a beehive?",
+        "options": [
+            "Ant",
+            "Bee",
+            "Butterfly",
+            "Spider"
+        ],
+        "answer": 1
+    },
+    {
+        "category": "Animals 🐬",
+        "emoji": "🐬",
+        "question": "Which intelligent sea creature jumps out of water and breathes air?",
+        "options": [
+            "Dolphin",
+            "Crab",
+            "Starfish",
+            "Jellyfish"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Animals 🦒",
+        "emoji": "🦒",
+        "question": "Which animal has a very long neck to eat tree leaves?",
+        "options": [
+            "Giraffe",
+            "Zebra",
+            "Deer",
+            "Kangaroo"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Animals 🦘",
+        "emoji": "🦘",
+        "question": "Which animal carries its baby in a pouch and hops fast?",
+        "options": [
+            "Kangaroo",
+            "Panda",
+            "Koala",
+            "Camel"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Animals 🐢",
+        "emoji": "🐢",
+        "question": "Which animal moves very slowly and carries a hard shell?",
+        "options": [
+            "Turtle",
+            "Rabbit",
+            "Fox",
+            "Cheetah"
+        ],
+        "answer": 0
+    },
+    {
         "category": "Fruits & Veggies 🍌",
         "emoji": "🍌",
         "question": "Which yellow fruit is a monkey's favorite food?",
@@ -116,6 +212,78 @@
             "Melon",
             "Pineapple",
             "Kiwi"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Fruits & Veggies 🍇",
+        "emoji": "🍇",
+        "question": "Which small round fruit grows in clusters on vines?",
+        "options": [
+            "Grape",
+            "Peach",
+            "Coconut",
+            "Pear"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Fruits & Veggies 🍋",
+        "emoji": "🍋",
+        "question": "Which yellow citrus fruit tastes very sour?",
+        "options": [
+            "Lemon",
+            "Cherry",
+            "Plum",
+            "Fig"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Fruits & Veggies 🥥",
+        "emoji": "🥥",
+        "question": "Which fruit has a hard brown shell and sweet coconut water inside?",
+        "options": [
+            "Coconut",
+            "Mango",
+            "Avocado",
+            "Papaya"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Fruits & Veggies 🥦",
+        "emoji": "🥦",
+        "question": "Which green vegetable looks like a mini tree?",
+        "options": [
+            "Broccoli",
+            "Tomato",
+            "Corn",
+            "Garlic"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Fruits & Veggies 🌽",
+        "emoji": "🌽",
+        "question": "Which yellow vegetable grows on a cob and makes popcorn?",
+        "options": [
+            "Corn",
+            "Pea",
+            "Spinach",
+            "Pumpkin"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Fruits & Veggies 🍍",
+        "emoji": "🍍",
+        "question": "Which tropical fruit has spiky skin and a green leafy top?",
+        "options": [
+            "Pineapple",
+            "Banana",
+            "Guava",
+            "Dragon Fruit"
         ],
         "answer": 0
     },
@@ -180,6 +348,66 @@
         "answer": 0
     },
     {
+        "category": "Food & Drinks 🍔",
+        "emoji": "🍔",
+        "question": "What fast food consists of a meat patty between two buns?",
+        "options": [
+            "Burger",
+            "Pancake",
+            "Salad",
+            "Steak"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Food & Drinks 🥚",
+        "emoji": "🥚",
+        "question": "What oval food comes from chickens and is fried for breakfast?",
+        "options": [
+            "Egg",
+            "Cheese",
+            "Bacon",
+            "Sausage"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Food & Drinks 💧",
+        "emoji": "💧",
+        "question": "What essential clear liquid should you drink every day to stay hydrated?",
+        "options": [
+            "Water",
+            "Juice",
+            "Milkshake",
+            "Syrup"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Food & Drinks 🍩",
+        "emoji": "🍩",
+        "question": "What sweet fried dough treat usually has a hole in the middle?",
+        "options": [
+            "Donut",
+            "Cookie",
+            "Pie",
+            "Muffin"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Food & Drinks 🍚",
+        "emoji": "🍚",
+        "question": "What staple white grain is eaten every day across Asia?",
+        "options": [
+            "Rice",
+            "Wheat",
+            "Oats",
+            "Corn"
+        ],
+        "answer": 0
+    },
+    {
         "category": "Things in Class 🏫",
         "emoji": "🏫",
         "question": "A place where students go to learn is called a...",
@@ -236,6 +464,66 @@
             "Pencil Case",
             "Wallet",
             "Basket"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Things in Class 🧹",
+        "emoji": "🧹",
+        "question": "What item do you use to rub out mistakes written in pencil?",
+        "options": [
+            "Eraser",
+            "Glue",
+            "Marker",
+            "Sharpener"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Things in Class ✂️",
+        "emoji": "✂️",
+        "question": "Which stationery tool is used to cut paper and cardboard?",
+        "options": [
+            "Scissors",
+            "Stapler",
+            "Compass",
+            "Tape"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Things in Class 🖥️",
+        "emoji": "🖥️",
+        "question": "What electronic device has a screen and keyboard for computing?",
+        "options": [
+            "Computer",
+            "Radio",
+            "Clock",
+            "Lamp"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Things in Class 🎨",
+        "emoji": "🎨",
+        "question": "What room in school is dedicated to drawing and painting?",
+        "options": [
+            "Art Room",
+            "Canteen",
+            "Gym",
+            "Library"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Things in Class ✏️",
+        "emoji": "✏️",
+        "question": "Where do you store your pens, pencils, and erasers neat and clean?",
+        "options": [
+            "Pencil Case",
+            "Lunchbox",
+            "Folder",
+            "Drawer"
         ],
         "answer": 0
     },
@@ -300,6 +588,66 @@
         "answer": 0
     },
     {
+        "category": "Public Places 🏦",
+        "emoji": "🏦",
+        "question": "Where do people deposit, save, and withdraw money safely?",
+        "options": [
+            "Bank",
+            "Museum",
+            "Park",
+            "Stadium"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Public Places 🌳",
+        "emoji": "🌳",
+        "question": "Where can children play on swings and slides surrounded by trees?",
+        "options": [
+            "Park",
+            "Airport",
+            "Factory",
+            "Office"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Public Places 📮",
+        "emoji": "📮",
+        "question": "Where do you go to send letters and mail packages?",
+        "options": [
+            "Post Office",
+            "Bakery",
+            "Gym",
+            "Zoo"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Public Places 🚉",
+        "emoji": "🚉",
+        "question": "Where do passengers board trains to travel to other cities?",
+        "options": [
+            "Railway Station",
+            "Harbor",
+            "Bus Stop",
+            "Airport"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Public Places 🥐",
+        "emoji": "🥐",
+        "question": "Where can you buy fresh bread, cakes, and pastry?",
+        "options": [
+            "Bakery",
+            "Pharmacy",
+            "Library",
+            "Bank"
+        ],
+        "answer": 0
+    },
+    {
         "category": "Jobs 👨‍🚒",
         "emoji": "👨‍🚒",
         "question": "Who puts out dangerous fires and saves people?",
@@ -356,6 +704,66 @@
             "Sailor",
             "Actor",
             "Judge"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Jobs 👨‍✈️",
+        "emoji": "👨‍✈️",
+        "question": "Who flies airplanes through the sky to fly passengers?",
+        "options": [
+            "Pilot",
+            "Captain",
+            "Driver",
+            "Astronaut"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Jobs 🩺",
+        "emoji": "🩺",
+        "question": "Who examines sick patients and prescribes medicine?",
+        "options": [
+            "Doctor",
+            "Vet",
+            "Nurse",
+            "Pharmacist"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Jobs 🦷",
+        "emoji": "🦷",
+        "question": "Who checks and cleans your teeth when you have a toothache?",
+        "options": [
+            "Dentist",
+            "Surgeon",
+            "Barber",
+            "Painter"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Jobs 🚀",
+        "emoji": "🚀",
+        "question": "Who travels into outer space in a rocket ship?",
+        "options": [
+            "Astronaut",
+            "Scientist",
+            "Engineer",
+            "Sailor"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Jobs 💈",
+        "emoji": "💈",
+        "question": "Who cuts and styles your hair at a salon?",
+        "options": [
+            "Barber",
+            "Tailor",
+            "Carpenter",
+            "Gardener"
         ],
         "answer": 0
     },
@@ -420,6 +828,66 @@
         "answer": 0
     },
     {
+        "category": "Hobbies & Sports 🏀",
+        "emoji": "🏀",
+        "question": "Which sport involves bouncing an orange ball and shooting into a hoop?",
+        "options": [
+            "Basketball",
+            "Volleyball",
+            "Baseball",
+            "Badminton"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Hobbies & Sports 🚴",
+        "emoji": "🚴",
+        "question": "What outdoor sport involves riding a bicycle on roads or trails?",
+        "options": [
+            "Cycling",
+            "Skating",
+            "Surfing",
+            "Running"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Hobbies & Sports 🏸",
+        "emoji": "🏸",
+        "question": "Which sport uses rackets to hit a shuttlecock over a net?",
+        "options": [
+            "Badminton",
+            "Tennis",
+            "Squash",
+            "Bowling"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Hobbies 🎹",
+        "emoji": "🎹",
+        "question": "Which musical instrument has 88 black and white keys?",
+        "options": [
+            "Piano",
+            "Violin",
+            "Guitar",
+            "Trumpet"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Hobbies 🎨",
+        "emoji": "🎨",
+        "question": "What creative hobby uses brushes, water, and paint on canvas?",
+        "options": [
+            "Painting",
+            "Singing",
+            "Knitting",
+            "Chess"
+        ],
+        "answer": 0
+    },
+    {
         "category": "Vocabulary ❄️",
         "emoji": "❄️",
         "question": "What is the opposite of the word 'HOT'?",
@@ -480,6 +948,66 @@
         "answer": 0
     },
     {
+        "category": "Vocabulary ☀️",
+        "emoji": "☀️",
+        "question": "What is the opposite of 'DAY'?",
+        "options": [
+            "Night",
+            "Noon",
+            "Morning",
+            "Evening"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Vocabulary ⬛",
+        "emoji": "⬛",
+        "question": "What is the opposite of 'BLACK'?",
+        "options": [
+            "White",
+            "Red",
+            "Grey",
+            "Dark"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Vocabulary 🪨",
+        "emoji": "🪨",
+        "question": "What is the opposite of 'HARD'?",
+        "options": [
+            "Soft",
+            "Heavy",
+            "Rough",
+            "Solid"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Vocabulary 💵",
+        "emoji": "💵",
+        "question": "What is the opposite of 'RICH'?",
+        "options": [
+            "Poor",
+            "Wealthy",
+            "Expensive",
+            "Cheap"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Vocabulary 🧼",
+        "emoji": "🧼",
+        "question": "What is the opposite of 'DIRTY'?",
+        "options": [
+            "Clean",
+            "Messy",
+            "Old",
+            "Muddy"
+        ],
+        "answer": 0
+    },
+    {
         "category": "General Knowledge 📅",
         "emoji": "📅",
         "question": "How many days are there in one week?",
@@ -536,6 +1064,186 @@
             "Rainbow",
             "Airplane",
             "Kite"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "General Knowledge 🌍",
+        "emoji": "🌍",
+        "question": "What shape is planet Earth?",
+        "options": [
+            "Round (Sphere)",
+            "Square",
+            "Triangle",
+            "Flat"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "General Knowledge 🧊",
+        "emoji": "🧊",
+        "question": "What happens to liquid water when it gets extremely cold?",
+        "options": [
+            "It freezes into ice",
+            "It boils",
+            "It turns red",
+            "It disappears"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "General Knowledge ⏱️",
+        "emoji": "⏱️",
+        "question": "How many seconds are in one minute?",
+        "options": [
+            "60 Seconds",
+            "10 Seconds",
+            "100 Seconds",
+            "30 Seconds"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "General Knowledge ❄️",
+        "emoji": "❄️",
+        "question": "Which season is the coldest season of the year?",
+        "options": [
+            "Winter",
+            "Summer",
+            "Spring",
+            "Autumn"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "General Knowledge 🌳",
+        "emoji": "🌳",
+        "question": "What plant part absorbs water from soil underneath?",
+        "options": [
+            "Roots",
+            "Leaves",
+            "Flowers",
+            "Branches"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Vehicles 🚗",
+        "emoji": "🚗",
+        "question": "Which vehicle has 4 wheels and drives on roads?",
+        "options": [
+            "Car",
+            "Bicycle",
+            "Boat",
+            "Helicopter"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Vehicles 🚌",
+        "emoji": "🚌",
+        "question": "Which large vehicle carries many passengers around town?",
+        "options": [
+            "Bus",
+            "Scooter",
+            "Taxi",
+            "Cart"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Vehicles 🚢",
+        "emoji": "🚢",
+        "question": "Which large vessel travels on water across oceans?",
+        "options": [
+            "Ship",
+            "Train",
+            "Plane",
+            "Truck"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Vehicles 🚁",
+        "emoji": "🚁",
+        "question": "Which aircraft has rotating blades on top to hover in air?",
+        "options": [
+            "Helicopter",
+            "Rocket",
+            "Glider",
+            "Balloon"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Vehicles 🚑",
+        "emoji": "🚑",
+        "question": "Which emergency vehicle takes patients to the hospital fast?",
+        "options": [
+            "Ambulance",
+            "Fire Truck",
+            "Police Car",
+            "Tractor"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Body Parts 👁️",
+        "emoji": "👁️",
+        "question": "Which body part do you use to see things around you?",
+        "options": [
+            "Eyes",
+            "Ears",
+            "Nose",
+            "Hands"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Body Parts 👂",
+        "emoji": "👂",
+        "question": "Which body part do you use to hear sounds and music?",
+        "options": [
+            "Ears",
+            "Mouth",
+            "Feet",
+            "Eyes"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Body Parts 👃",
+        "emoji": "👃",
+        "question": "Which body part do you use to smell flowers and food?",
+        "options": [
+            "Nose",
+            "Chin",
+            "Knee",
+            "Tongue"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Body Parts 🖐️",
+        "emoji": "🖐️",
+        "question": "How many fingers do you have on one hand?",
+        "options": [
+            "5 Fingers",
+            "10 Fingers",
+            "4 Fingers",
+            "6 Fingers"
+        ],
+        "answer": 0
+    },
+    {
+        "category": "Body Parts 🦶",
+        "emoji": "🦶",
+        "question": "What do you wear on your feet inside your shoes?",
+        "options": [
+            "Socks",
+            "Gloves",
+            "Hat",
+            "Belt"
         ],
         "answer": 0
     }
