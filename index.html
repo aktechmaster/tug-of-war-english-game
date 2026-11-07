@@ -15,23 +15,21 @@
     <!-- Canvas for Victory Confetti -->
     <canvas id="confetti-canvas"></canvas>
 
-    <!-- START GAME MODAL (Topic Picker & Match Setup) -->
+    <!-- START GAME MODAL (Match Confirmation) -->
     <div id="start-modal" class="fixed inset-0 bg-slate-950/95 backdrop-blur-xl flex items-center justify-center z-50 p-4">
         <div class="bg-slate-900 border-4 border-amber-500/80 rounded-3xl p-6 md:p-8 max-w-xl w-full text-center shadow-2xl relative">
             <div class="text-6xl mb-3 animate-pulse">🪢</div>
             <h1 class="text-3xl md:text-4xl font-black text-amber-400 uppercase tracking-wider mb-1">Tug of War</h1>
             <p class="text-slate-300 text-sm font-semibold mb-6">Interactive English Quiz for Smart Board</p>
 
-            <!-- Topic Selector Box -->
+            <!-- Mode Description Box -->
             <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 mb-6 text-left shadow-inner">
-                <label class="block text-xs font-black text-amber-400 uppercase tracking-wider mb-2">
-                    🎲 Choose Topic / Quiz Category:
-                </label>
-                <select id="topic-select" class="w-full bg-slate-950 border-2 border-amber-500/50 rounded-xl p-3.5 text-white font-bold text-base focus:outline-none focus:border-amber-400 cursor-pointer">
-                    <option value="ALL">🌟 System Random Mix (All 50+ Questions)</option>
-                </select>
-                <p class="text-xs text-slate-400 mt-2">
-                    * Each match will randomly select <strong>11 fresh questions</strong> from the question bank.
+                <div class="flex items-center space-x-2 mb-2">
+                    <span class="text-xl">🎲</span>
+                    <h3 class="text-sm font-black text-amber-400 uppercase tracking-wider">Random Challenge Mode</h3>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    Setiap pertandingan akan secara otomatis mengacak <strong>11 pertanyaan baru</strong> dari seluruh kumpulan bank soal (Animals, Fruits, Food, Jobs, Public Places, Vocabulary, dll).
                 </p>
             </div>
 
@@ -48,9 +46,19 @@
             </div>
 
             <!-- Start Confirmation Button -->
-            <button onclick="startGameFromModal()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xl py-4 rounded-2xl shadow-xl transition transform active:scale-95">
+            <button onclick="startCountdown()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xl py-4 rounded-2xl shadow-xl transition transform active:scale-95">
                 START GAME 🚀
             </button>
+        </div>
+    </div>
+
+    <!-- COUNTDOWN MODAL OVERLAY -->
+    <div id="countdown-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-2xl flex flex-col items-center justify-center hidden z-50 p-4">
+        <div class="text-center">
+            <p class="text-amber-400/80 text-sm md:text-base font-extrabold uppercase tracking-widest mb-4">Get Ready!</p>
+            <div id="countdown-number" class="text-8xl md:text-9xl font-black text-amber-400 animate-countdown-num drop-shadow-[0_10px_20px_rgba(245,158,11,0.5)]">
+                3
+            </div>
         </div>
     </div>
 
@@ -70,13 +78,10 @@
         </div>
         <!-- Utility Buttons -->
         <div class="flex items-center space-x-3">
-            <button onclick="openStartModal()" class="bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold px-3 py-2 rounded-xl border border-slate-700 text-xs">
-                ⚙️ Change Topic
-            </button>
             <button id="sound-btn" onclick="toggleSound()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 p-2.5 rounded-xl border border-slate-700 transition flex items-center justify-center">
                 <span id="sound-icon" class="text-xl">🔊</span>
             </button>
-            <button onclick="resetGame()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-4 py-2.5 rounded-xl shadow-lg transition text-sm flex items-center space-x-1">
+            <button onclick="goToStartModal()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-4 py-2.5 rounded-xl shadow-lg transition text-sm flex items-center space-x-1">
                 <span>🔄</span>
                 <span>Reset</span>
             </button>
@@ -248,7 +253,7 @@
                 </div>
             </div>
 
-            <button onclick="resetGame()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-lg py-4 rounded-xl shadow-xl transition transform active:scale-95">
+            <button onclick="goToStartModal()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-lg py-4 rounded-xl shadow-xl transition transform active:scale-95">
                 PLAY AGAIN 🔄
             </button>
         </div>
