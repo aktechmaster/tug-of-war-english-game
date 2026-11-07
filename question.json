@@ -1,0 +1,79 @@
+[
+    {
+        "category": "Animals 🦁",
+        "emoji": "🦁",
+        "question": "What animal is known as the 'King of the Jungle'?",
+        "options": ["Elephant", "Lion", "Tiger", "Giraffe"],
+        "answer": 1
+    },
+    {
+        "category": "Fruits 🍌",
+        "emoji": "🍌",
+        "question": "Which yellow fruit is a monkey's favorite food?",
+        "options": ["Apple", "Grape", "Banana", "Orange"],
+        "answer": 2
+    },
+    {
+        "category": "Hobbies 💃",
+        "emoji": "💃",
+        "question": "What hobby involves moving your body to music?",
+        "options": ["Reading", "Dancing", "Cooking", "Fishing"],
+        "answer": 1
+    },
+    {
+        "category": "Vocabulary ❄️",
+        "emoji": "❄️",
+        "question": "What is the opposite of the word 'HOT'?",
+        "options": ["Cold", "Warm", "Fire", "Sun"],
+        "answer": 0
+    },
+    {
+        "category": "Animals 🕊️",
+        "emoji": "🕊️",
+        "question": "Which animal can fly in the sky and lay eggs?",
+        "options": ["Dog", "Cat", "Bird", "Frog"],
+        "answer": 2
+    },
+    {
+        "category": "General Knowledge 📅",
+        "emoji": "📅",
+        "question": "How many days are there in one week?",
+        "options": ["5 Days", "6 Days", "7 Days", "8 Days"],
+        "answer": 2
+    },
+    {
+        "category": "Fruits 🍓",
+        "emoji": "🍓",
+        "question": "What color is a ripe strawberry?",
+        "options": ["Blue", "Green", "Yellow", "Red"],
+        "answer": 3
+    },
+    {
+        "category": "Hobbies 📸",
+        "emoji": "📸",
+        "question": "Which activity uses a camera to take pictures?",
+        "options": ["Photography", "Swimming", "Cycling", "Gardening"],
+        "answer": 0
+    },
+    {
+        "category": "Vocabulary 🏫",
+        "emoji": "🏫",
+        "question": "A place where students go to learn is called a...",
+        "options": ["Hospital", "Park", "School", "Bank"],
+        "answer": 2
+    },
+    {
+        "category": "Animals 🦈",
+        "emoji": "🦈",
+        "question": "Which ocean animal has sharp teeth and swims fast?",
+        "options": ["Shark", "Rabbit", "Sheep", "Cow"],
+        "answer": 0
+    },
+    {
+        "category": "General Knowledge 🐘",
+        "emoji": "🐘",
+        "question": "What is the largest land animal in the world?",
+        "options": ["Blue Whale", "Elephant", "Hippopotamus", "Rhino"],
+        "answer": 1
+    }
+]
