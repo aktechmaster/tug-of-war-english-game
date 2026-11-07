@@ -236,17 +236,15 @@ function updateRopePosition() {
     }
 }
 
-// --- ANIMATE CHARACTERS ON PULL ---
+// --- ANIMATE PNG IMAGE ON PULL ---
 function animatePull(winningTeam) {
-    const redTeamSvg = document.getElementById('red-team-svg');
-    const blueTeamSvg = document.getElementById('blue-team-svg');
-
+    const tugImg = document.getElementById('tug-image');
     if (winningTeam === 'red') {
-        redTeamSvg.classList.add('pull-left');
-        setTimeout(() => redTeamSvg.classList.remove('pull-left'), 400);
+        tugImg.classList.add('pull-left-anim');
+        setTimeout(() => tugImg.classList.remove('pull-left-anim'), 350);
     } else {
-        blueTeamSvg.classList.add('pull-right');
-        setTimeout(() => blueTeamSvg.classList.remove('pull-right'), 400);
+        tugImg.classList.add('pull-right-anim');
+        setTimeout(() => tugImg.classList.remove('pull-right-anim'), 350);
     }
 }
 
