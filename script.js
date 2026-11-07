@@ -1,5 +1,6 @@
 // --- GAME STATE VARIABLES ---
-let questions = [];
+let allQuestions = [];
+let currentQuestionsList = [];
 let currentQIndex = 0;
 let ropeStep = 0; // -5 (Red max win) to +5 (Blue max win)
 let redScore = 0;
@@ -78,36 +79,106 @@ function toggleSound() {
     document.getElementById('sound-icon').innerText = soundEnabled ? '🔊' : '🔇';
 }
 
+// Utility: Fisher-Yates Shuffle
+function shuffleArray(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
 // --- INITIALIZE GAME ---
 window.onload = async function() {
-    await loadQuestionsData();
-    updateRopePosition();
+    await fetchQuestionsData();
+    populateTopicDropdown();
 };
 
 // --- FETCH QUESTIONS JSON ---
-async function loadQuestionsData() {
+async function fetchQuestionsData() {
     try {
         const response = await fetch('questions.json');
-        questions = await response.json();
-        loadQuestion();
+        allQuestions = await response.json();
     } catch (error) {
         console.error("Error loading questions.json:", error);
     }
 }
 
+// Populate Topic Select Options
+function populateTopicDropdown() {
+    const select = document.getElementById('topic-select');
+    if (!select) return;
+    
+    // Extract unique base categories
+    const categoriesSet = new Set();
+    allQuestions.forEach(q => {
+        const baseName = q.category.split(' ')[0]; // e.g. "Animals"
+        categoriesSet.add(baseName);
+    });
+
+    categoriesSet.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat;
+        opt.innerText = `🎯 Topic: ${cat}`;
+        select.appendChild(opt);
+    });
+}
+
+// Prepare 11 Shuffled Questions based on selected topic or random system
+function prepareQuestionSet() {
+    const selectedTopic = document.getElementById('topic-select').value;
+    let filtered = [];
+
+    if (selectedTopic === 'ALL') {
+        filtered = allQuestions;
+    } else {
+        filtered = allQuestions.filter(q => q.category.startsWith(selectedTopic));
+    }
+
+    // If filtered count is less than 11, fallback to all questions
+    if (filtered.length < 11) {
+        filtered = allQuestions;
+    }
+
+    // Shuffle and pick exactly 11 questions
+    const shuffled = shuffleArray(filtered);
+    currentQuestionsList = shuffled.slice(0, 11);
+}
+
+// Called when player clicks "START GAME 🚀" from Start Screen Modal
+function startGameFromModal() {
+    initAudio();
+    prepareQuestionSet();
+    document.getElementById('start-modal').classList.add('hidden');
+    
+    currentQIndex = 0;
+    ropeStep = 0;
+    redScore = 0;
+    blueScore = 0;
+    updateScores();
+    updateRopePosition();
+    loadQuestion();
+}
+
+// Open Start Modal to change settings / confirm start
+function openStartModal() {
+    document.getElementById('start-modal').classList.remove('hidden');
+}
+
 // --- LOAD QUESTION ---
 function loadQuestion() {
-    if (currentQIndex >= questions.length) {
+    if (currentQIndex >= currentQuestionsList.length) {
         endGame();
         return;
     }
-    const q = questions[currentQIndex];
+    const q = currentQuestionsList[currentQIndex];
     
     redLocked = false;
     blueLocked = false;
     questionAnswered = false;
 
-    document.getElementById('question-progress').innerText = `${currentQIndex + 1} / ${questions.length}`;
+    document.getElementById('question-progress').innerText = `${currentQIndex + 1} / ${currentQuestionsList.length}`;
     document.getElementById('question-category').innerText = `Category: ${q.category}`;
     document.getElementById('question-emoji').innerText = q.emoji;
     document.getElementById('question-text').innerText = q.question;
@@ -144,7 +215,7 @@ function handleAnswer(team, selectedIdx) {
     if (team === 'red' && redLocked) return;
     if (team === 'blue' && blueLocked) return;
 
-    const currentQ = questions[currentQIndex];
+    const currentQ = currentQuestionsList[currentQIndex];
     const isCorrect = (selectedIdx === currentQ.answer);
 
     if (isCorrect) {
@@ -239,6 +310,7 @@ function updateRopePosition() {
 // --- ANIMATE PNG IMAGE ON PULL ---
 function animatePull(winningTeam) {
     const tugImg = document.getElementById('tug-image');
+    if (!tugImg) return;
     if (winningTeam === 'red') {
         tugImg.classList.add('pull-left-anim');
         setTimeout(() => tugImg.classList.remove('pull-left-anim'), 350);
@@ -281,14 +353,15 @@ function endGame() {
     modal.classList.remove('hidden');
 }
 
-// --- RESET GAME ---
+// --- RESET GAME (SHUFFLES NEW 11 QUESTIONS) ---
 function resetGame() {
+    stopConfetti();
+    document.getElementById('victory-modal').classList.add('hidden');
+    prepareQuestionSet();
     currentQIndex = 0;
     ropeStep = 0;
     redScore = 0;
     blueScore = 0;
-    stopConfetti();
-    document.getElementById('victory-modal').classList.add('hidden');
     updateScores();
     updateRopePosition();
     loadQuestion();
@@ -335,6 +408,7 @@ function startConfetti() {
 function stopConfetti() {
     clearInterval(confettiInterval);
     const canvas = document.getElementById('confetti-canvas');
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
