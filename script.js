@@ -32,7 +32,21 @@ function playSound(type) {
     gain.connect(audioCtx.destination);
     const now = audioCtx.currentTime;
 
-    if (type === 'correct') {
+    if (type === 'beep') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, now);
+        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+        osc.start(now);
+        osc.stop(now + 0.2);
+    } else if (type === 'go') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(880, now);
+        gain.gain.setValueAtTime(0.4, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+        osc.start(now);
+        osc.stop(now + 0.5);
+    } else if (type === 'correct') {
         osc.type = 'sine';
         osc.frequency.setValueAtTime(523.25, now);
         osc.frequency.setValueAtTime(659.25, now + 0.1);
@@ -92,7 +106,6 @@ function shuffleArray(array) {
 // --- INITIALIZE GAME ---
 window.onload = async function() {
     await fetchQuestionsData();
-    populateTopicDropdown();
 };
 
 // --- FETCH QUESTIONS JSON ---
@@ -105,53 +118,53 @@ async function fetchQuestionsData() {
     }
 }
 
-// Populate Topic Select Options
-function populateTopicDropdown() {
-    const select = document.getElementById('topic-select');
-    if (!select) return;
-    
-    // Extract unique base categories
-    const categoriesSet = new Set();
-    allQuestions.forEach(q => {
-        const baseName = q.category.split(' ')[0]; // e.g. "Animals"
-        categoriesSet.add(baseName);
-    });
-
-    categoriesSet.forEach(cat => {
-        const opt = document.createElement('option');
-        opt.value = cat;
-        opt.innerText = `🎯 Topic: ${cat}`;
-        select.appendChild(opt);
-    });
-}
-
-// Prepare 11 Shuffled Questions based on selected topic or random system
+// Prepare 11 Random Questions across all topics
 function prepareQuestionSet() {
-    const selectedTopic = document.getElementById('topic-select').value;
-    let filtered = [];
-
-    if (selectedTopic === 'ALL') {
-        filtered = allQuestions;
-    } else {
-        filtered = allQuestions.filter(q => q.category.startsWith(selectedTopic));
-    }
-
-    // If filtered count is less than 11, fallback to all questions
-    if (filtered.length < 11) {
-        filtered = allQuestions;
-    }
-
-    // Shuffle and pick exactly 11 questions
-    const shuffled = shuffleArray(filtered);
+    const shuffled = shuffleArray(allQuestions);
     currentQuestionsList = shuffled.slice(0, 11);
 }
 
-// Called when player clicks "START GAME 🚀" from Start Screen Modal
-function startGameFromModal() {
+// Called when player clicks "START GAME 🚀" on Start Screen Modal
+function startCountdown() {
     initAudio();
-    prepareQuestionSet();
     document.getElementById('start-modal').classList.add('hidden');
     
+    // Show countdown modal
+    const countModal = document.getElementById('countdown-modal');
+    const countNum = document.getElementById('countdown-number');
+    countModal.classList.remove('hidden');
+
+    let count = 3;
+    
+    function updateCountdownDisplay() {
+        countNum.classList.remove('animate-countdown-num');
+        // Trigger reflow to restart CSS animation
+        void countNum.offsetWidth;
+
+        if (count > 0) {
+            countNum.innerText = count;
+            countNum.className = "text-8xl md:text-9xl font-black text-amber-400 animate-countdown-num drop-shadow-[0_10px_20px_rgba(245,158,11,0.5)]";
+            playSound('beep');
+            count--;
+            setTimeout(updateCountdownDisplay, 900);
+        } else {
+            countNum.innerText = "READY... GO! 🔥";
+            countNum.className = "text-5xl md:text-7xl font-black text-emerald-400 animate-countdown-num drop-shadow-[0_10px_20px_rgba(16,185,129,0.6)]";
+            playSound('go');
+            
+            setTimeout(() => {
+                countModal.classList.add('hidden');
+                initiateMatchPlay();
+            }, 800);
+        }
+    }
+
+    updateCountdownDisplay();
+}
+
+// Actually start the gameplay after countdown finishes
+function initiateMatchPlay() {
+    prepareQuestionSet();
     currentQIndex = 0;
     ropeStep = 0;
     redScore = 0;
@@ -161,8 +174,10 @@ function startGameFromModal() {
     loadQuestion();
 }
 
-// Open Start Modal to change settings / confirm start
-function openStartModal() {
+// Return to Start Modal (Main Screen)
+function goToStartModal() {
+    stopConfetti();
+    document.getElementById('victory-modal').classList.add('hidden');
     document.getElementById('start-modal').classList.remove('hidden');
 }
 
@@ -351,20 +366,6 @@ function endGame() {
     }
 
     modal.classList.remove('hidden');
-}
-
-// --- RESET GAME (SHUFFLES NEW 11 QUESTIONS) ---
-function resetGame() {
-    stopConfetti();
-    document.getElementById('victory-modal').classList.add('hidden');
-    prepareQuestionSet();
-    currentQIndex = 0;
-    ropeStep = 0;
-    redScore = 0;
-    blueScore = 0;
-    updateScores();
-    updateRopePosition();
-    loadQuestion();
 }
 
 // --- SIMPLE CANVAS CONFETTI EFFECT ---
