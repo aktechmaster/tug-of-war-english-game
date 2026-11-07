@@ -15,6 +15,45 @@
     <!-- Canvas for Victory Confetti -->
     <canvas id="confetti-canvas"></canvas>
 
+    <!-- START GAME MODAL (Topic Picker & Match Setup) -->
+    <div id="start-modal" class="fixed inset-0 bg-slate-950/95 backdrop-blur-xl flex items-center justify-center z-50 p-4">
+        <div class="bg-slate-900 border-4 border-amber-500/80 rounded-3xl p-6 md:p-8 max-w-xl w-full text-center shadow-2xl relative">
+            <div class="text-6xl mb-3 animate-pulse">🪢</div>
+            <h1 class="text-3xl md:text-4xl font-black text-amber-400 uppercase tracking-wider mb-1">Tug of War</h1>
+            <p class="text-slate-300 text-sm font-semibold mb-6">Interactive English Quiz for Smart Board</p>
+
+            <!-- Topic Selector Box -->
+            <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 mb-6 text-left shadow-inner">
+                <label class="block text-xs font-black text-amber-400 uppercase tracking-wider mb-2">
+                    🎲 Choose Topic / Quiz Category:
+                </label>
+                <select id="topic-select" class="w-full bg-slate-950 border-2 border-amber-500/50 rounded-xl p-3.5 text-white font-bold text-base focus:outline-none focus:border-amber-400 cursor-pointer">
+                    <option value="ALL">🌟 System Random Mix (All 50+ Questions)</option>
+                </select>
+                <p class="text-xs text-slate-400 mt-2">
+                    * Each match will randomly select <strong>11 fresh questions</strong> from the question bank.
+                </p>
+            </div>
+
+            <!-- Rules Summary -->
+            <div class="grid grid-cols-2 gap-3 mb-6 text-xs text-slate-300 font-bold">
+                <div class="bg-red-950/50 border border-red-500/30 p-3 rounded-xl">
+                    <span class="text-red-400 block text-sm font-black mb-1">🔴 Team Red</span>
+                    Left side controls. Be fast & accurate!
+                </div>
+                <div class="bg-blue-950/50 border border-blue-500/30 p-3 rounded-xl">
+                    <span class="text-blue-400 block text-sm font-black mb-1">🔵 Team Blue</span>
+                    Right side controls. Pull to win!
+                </div>
+            </div>
+
+            <!-- Start Confirmation Button -->
+            <button onclick="startGameFromModal()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xl py-4 rounded-2xl shadow-xl transition transform active:scale-95">
+                START GAME 🚀
+            </button>
+        </div>
+    </div>
+
     <!-- HEADER BAR -->
     <header class="w-full bg-slate-900/90 border-b border-slate-800 py-3 px-6 flex justify-between items-center backdrop-blur-md z-10 shadow-lg">
         <div class="flex items-center space-x-3">
@@ -31,6 +70,9 @@
         </div>
         <!-- Utility Buttons -->
         <div class="flex items-center space-x-3">
+            <button onclick="openStartModal()" class="bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold px-3 py-2 rounded-xl border border-slate-700 text-xs">
+                ⚙️ Change Topic
+            </button>
             <button id="sound-btn" onclick="toggleSound()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 p-2.5 rounded-xl border border-slate-700 transition flex items-center justify-center">
                 <span id="sound-icon" class="text-xl">🔊</span>
             </button>
@@ -86,9 +128,10 @@
         </div>
     </section>
 
-    <!-- MAIN GAMEPLAY SECTION -->
+    <!-- MAIN GAMEPLAY SECTION: DUAL CONTROLS & CENTER QUESTION -->
     <main class="w-full max-w-7xl mx-auto px-4 my-auto py-2 grid grid-cols-12 gap-4 items-stretch">
-        <!-- TEAM RED CONTROL PANEL -->
+        
+        <!-- TEAM RED CONTROL PANEL (LEFT) -->
         <section id="red-panel" class="col-span-12 md:col-span-3 bg-red-950/40 border-2 border-red-600/40 rounded-2xl p-4 flex flex-col justify-between shadow-xl backdrop-blur-sm">
             <div class="flex items-center justify-between pb-3 border-b border-red-800/40">
                 <div class="flex items-center space-x-2">
@@ -97,6 +140,7 @@
                 </div>
                 <span id="red-status" class="text-xs font-extrabold bg-red-500/20 text-red-300 px-2.5 py-1 rounded-md border border-red-500/30">READY</span>
             </div>
+            <!-- Answer Buttons Red Side -->
             <div class="grid grid-cols-1 gap-2.5 my-3">
                 <button onclick="handleAnswer('red', 0)" class="btn-red-opt btn-touch w-full bg-slate-900 hover:bg-red-900/60 border-2 border-red-500/40 hover:border-red-400 text-white font-bold p-3.5 rounded-xl flex items-center space-x-3 shadow-md text-left">
                     <span class="w-8 h-8 rounded-lg bg-red-600 text-white font-black flex items-center justify-center shrink-0">A</span>
@@ -121,6 +165,8 @@
         <!-- CENTER QUESTION BOARD -->
         <section class="col-span-12 md:col-span-6 flex flex-col justify-between">
             <div class="question-card h-full bg-slate-900/90 border-2 border-amber-500/50 rounded-2xl p-6 flex flex-col justify-between shadow-2xl relative overflow-hidden backdrop-blur-md">
+                
+                <!-- Topic Tag & Feedback Splash -->
                 <div class="flex justify-between items-center mb-2">
                     <span id="question-category" class="bg-amber-500/20 text-amber-300 text-xs font-black px-3 py-1 rounded-lg border border-amber-500/30 uppercase tracking-widest">
                         Category: General
@@ -130,6 +176,7 @@
                     </div>
                 </div>
 
+                <!-- Main Question Display -->
                 <div class="my-auto py-4 text-center">
                     <div id="question-emoji" class="text-5xl mb-3 animate-pulse">❓</div>
                     <h2 id="question-text" class="text-xl md:text-2xl lg:text-3xl font-black text-white leading-relaxed">
@@ -137,6 +184,7 @@
                     </h2>
                 </div>
 
+                <!-- Footer Hint / Timer info -->
                 <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400 font-bold">
                     <span>⚡ Race to answer first!</span>
                     <span>11 Questions Total</span>
@@ -144,7 +192,7 @@
             </div>
         </section>
 
-        <!-- TEAM BLUE CONTROL PANEL -->
+        <!-- TEAM BLUE CONTROL PANEL (RIGHT) -->
         <section id="blue-panel" class="col-span-12 md:col-span-3 bg-blue-950/40 border-2 border-blue-600/40 rounded-2xl p-4 flex flex-col justify-between shadow-xl backdrop-blur-sm">
             <div class="flex items-center justify-between pb-3 border-b border-blue-800/40">
                 <span id="blue-status" class="text-xs font-extrabold bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md border border-blue-500/30">READY</span>
@@ -153,6 +201,7 @@
                     <span class="text-2xl">🔵</span>
                 </div>
             </div>
+            <!-- Answer Buttons Blue Side -->
             <div class="grid grid-cols-1 gap-2.5 my-3">
                 <button onclick="handleAnswer('blue', 0)" class="btn-blue-opt btn-touch w-full bg-slate-900 hover:bg-blue-900/60 border-2 border-blue-500/40 hover:border-blue-400 text-white font-bold p-3.5 rounded-xl flex items-center justify-between shadow-md text-right">
                     <span class="blue-opt-text text-base md:text-sm lg:text-base font-extrabold text-slate-200">Option A</span>
@@ -173,6 +222,7 @@
             </div>
             <p class="text-center text-xs text-blue-400/70 font-semibold">Touch to answer for BLUE</p>
         </section>
+
     </main>
 
     <!-- FOOTER INFO -->
